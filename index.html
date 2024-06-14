@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Links with Shadow Animation and Music</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fff3e6; /* Warna yang terinspirasi oleh kemewahan */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .links-container {
+            background-color: #ffffff; /* Warna latar belakang putih */
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .links-container h1 {
+            font-size: 26px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .links-list li {
+            margin-bottom: 15px;
+        }
+
+        .links-list li a {
+            text-decoration: none;
+            color: #1a1a1a; /* Warna teks yang mewah */
+            font-weight: bold;
+            padding: 12px 20px;
+            display: block;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-image: url('path-to-your-image.png'); /* Ganti path dengan URL gambar ikon yang diinginkan */
+            background-repeat: no-repeat;
+            background-size: 20px 20px; /* Sesuaikan ukuran ikon */
+            background-position: 10px center;
+            padding-left: 50px; /* Sesuaikan jarak antara ikon dan teks */
+            animation: shadow-animation 2s ease-in-out infinite alternate;
+        }
+
+        .links-list li a:hover {
+            background-color: #ffd699; /* Warna latar belakang yang menonjol saat dihover */
+            color: #1a1a1a; /* Warna teks yang mewah */
+        }
+
+        @keyframes shadow-animation {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://inaudio.org/wp-content/uploads/2024/06/Oddvision-Media-Infraction-Music-Some-Thought-water.mp3" type="audio/mpeg"> <!-- Ganti "your-audio-file.mp3" dengan URL atau path file audio yang Anda inginkan -->
+        Your browser does not support the audio element.
+    </audio>
+    <div class="links-container">
+        <h1>Stylish Links</h1>
+        <ul class="links-list">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ul>
+    </div>
+</body>
+</html>
