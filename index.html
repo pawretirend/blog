@@ -94,6 +94,91 @@
             background-color: #1a1a1a; /* Warna latar belakang tombol saat dihover */
             color: #ffd699; /* Warna teks tombol saat dihover */
         }
+
+        /* Tambahkan gaya untuk menu navigasi responsif */
+        .navigation {
+            display: none;
+            position: relative;
+            top: -20px;
+        }
+
+        /* Tampilkan menu navigasi ketika tombol menu di klik */
+        .menu-icon:checked + .navigation {
+            display: block;
+        }
+
+        /* Sembunyikan tombol menu ketika tampilan desktop */
+        @media (min-width: 600px) {
+            .menu-icon {
+                display: none;
+            }
+        }
+
+        /* Gaya untuk tombol menu */
+        .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .menu-icon .line {
+            width: 35px;
+            height: 5px;
+            background-color: #1a1a1a;
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon .line:nth-child(2) {
+            width: 25px;
+        }
+
+        /* Animasi untuk tombol menu */
+        .menu-icon:hover .line {
+            background-color: #ffd699;
+        }
+
+        .menu-icon.active .line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-icon.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active .line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Gaya untuk menu navigasi */
+        .navigation {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation a {
+            display: block;
+            padding: 8px 16px;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .navigation a:hover {
+            background-color: #ffd699;
+            color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +186,17 @@
         <source src="https://inaudio.org/wp-content/uploads/2024/06/Oddvision-Media-Infraction-Music-Some-Thought-water.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <input type="checkbox" class="menu-icon" id="menu-icon">
+    <label for="menu-icon" class="menu-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </label>
+    <div class="navigation">
+        <a href="#">Style Tambahan 1</a>
+        <a href="#">Style Tambahan 2</a>
+        <a href="#">Style Tambahan 3</a>
+    </div>
     <div class="links-container">
         <h1>Stylish Links</h1>
         <ul class="links-list">
