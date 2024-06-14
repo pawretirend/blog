@@ -14,6 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
         }
 
@@ -23,6 +24,7 @@
             padding: 30px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             width: 300px;
+            margin-bottom: 20px;
         }
 
         .links-container h1 {
@@ -72,11 +74,31 @@
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             }
         }
+
+        .music-button {
+            background-color: #ffd699; /* Warna latar belakang tombol */
+            color: #1a1a1a; /* Warna teks tombol */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kesan mewah */
+            background-image: url('https://telegra.ph/file/9c8f5cbf22ad2db17c6e6.jpg'); /* Gambar latar belakang tombol */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .music-button:hover {
+            background-color: #1a1a1a; /* Warna latar belakang tombol saat dihover */
+            color: #ffd699; /* Warna teks tombol saat dihover */
+        }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="https://inaudio.org/wp-content/uploads/2024/06/Oddvision-Media-Infraction-Music-Some-Thought-water.mp3" type="audio/mpeg"> <!-- Ganti "your-audio-file.mp3" dengan URL atau path file audio yang Anda inginkan -->
+    <audio id="bg-music" loop>
+        <source src="https://inaudio.org/wp-content/uploads/2024/06/Oddvision-Media-Infraction-Music-Some-Thought-water.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <div class="links-container">
@@ -88,5 +110,18 @@
             <li><a href="#">https://sfl.gl/6eXj1wPo</a></li>
         </ul>
     </div>
+    <button class="music-button" onclick="toggleMusic()">Play Music</button>
+
+    <script>
+        var audio = document.getElementById("bg-music");
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 </body>
 </html>
